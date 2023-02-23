@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desafio</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />  
   </head>
   <body>
     <div class="container">
       <header>
-        <img src="/imagenes/Logo.png" alt="alura">
+        <img src="/imagenes/Logo.png" alt="alura" />
         <h1>Encriptador</h1>
       </header>
       <div class="encriptar">
@@ -24,27 +24,33 @@
         ></textarea>
 
         <div class="terminos">
-          <p>Solo letras minúsculas y sin acentos.</p>
+          <p class="info">Solo letras minúsculas y sin acentos.</p>
         </div>
         <div class="botones">
-          <button class="btn-encriptar" type="button" onclick="encriptar()">
+          <button class="btn-encriptar" type="button" onclick="Encriptar()">
             Encriptar
           </button>
-          <input
+          <button
             type="button"
             class="btn-desencriptar"
-            value="Desencriptar"
-            onclick="desencriptar()"
-          />
+            onclick="Desencriptar()"
+          >
+            Desencriptar
+          </button>
+          <div>
+            <button onclick="limpiar()" class="limpiar">Limpiar</button>
+          </div>
         </div>
       </div>
       <div class="encriptado">
-        <img src="imagenes/Muñeco.png" alt="Muñeco" id="muñeco" />
+        <img src="imagenes/Muñeco.png" class="muneco" alt="">
         <div class="mensaje-encriptado" id="mensaje-encriptado">
-          <h2 class="titulo-mensaje">Ningún mensaje fue encontrado</h2>
-          <p class="parrafo">
-            Ingresa el texto que deseas encriptar o desencriptar
-          </p>
+          <h1 class="tituloResultado">Ningún mensaje fue encontrado</h1>
+                <p class="contenidoResultado">Ingresa el texto que deseas encriptar o
+                    desencriptar
+                </p>
+          <button class="copiar" onclick="copiar()">Copiar</button>
+          
         </div>
       </div>
     </div>

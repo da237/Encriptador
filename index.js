@@ -1,46 +1,39 @@
-function encriptar() {
-  let texto = document.querySelector(".texto").value;
-  let tituloMensaje = document.querySelector(".titulo-mensaje");
-  let parrafo = document.querySelector(".parrafo");
+const mensaje = document.querySelector(".texto");
+const mensaje2 = document.querySelector(".textEncriptado");
 
-  let textoCifrado = texto
-    .replace(/e/g, "enter")
-    .replace(/i/g, "imes")
-    .replace(/a/g, "ai")
-    .replace(/o/g, "ober")
-    .replace(/u/g, "ufat");
+const Encriptar = () => {
+  let resultado = mensaje.value;
+  let mensajeEncriptado = resultado
+    .replaceAll("e", "enter")
+    .replaceAll("i", "imes")
+    .replaceAll("a", "ai")
+    .replaceAll("o", "ober")
+    .replaceAll("u", "ufat");
 
-  if (texto.length != 0) {
-    document.querySelector("texto").value = textoCifrado;
-    tituloMensaje.textContent = "Texto encriptado con éxito";
-    parrafo.textContent = "";
-   
-  } else {
-    tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-    parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
-    swal("Ooops!", "Debes ingresar un texto", "warning");
-  }
+  mensaje2.value = mensajeEncriptado;
+};
+
+const Desencriptar = () => {
+  let mensajeEncriptado = mensaje.value;
+  let resultado = mensajeEncriptado
+    .replaceAll("enter", "e")
+    .replaceAll("imes", "i")
+    .replaceAll("ai", "a")
+    .replaceAll("ober", "o")
+    .replaceAll("ufat", "u");
+
+  mensaje2.value = resultado;
+};
+
+
+const limpiar =()=>{
+  mensaje.value = " ";
+  mensaje2.value= "";
 }
 
-function desencriptar() {
-  let texto = document.querySelector(".texto").value;
-  let tituloMensaje = document.querySelector(".titulo-mensaje");
-  let parrafo = document.querySelector(".parrafo");
-
-  let textoCifrado = texto
-    .replace(/enter/g, "e")
-    .replace(/imes/g, "i")
-    .replace(/ai/g, "a")
-    .replace(/ober/g, "o")
-    .replace(/ufat/g, "u");
-  
-    if (texto.length != 0) {
-      document.querySelector(".texto").value = textoCifrado;
-      tituloMensaje.textContent = "Texto desencriptado con éxito";
-      parrafo.textContent = "";
-    } else {
-      tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-      parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
-      swal("Ooops!", "Debes ingresar un texto", "warning");
-    }
+const copiar = ()=>{
+  let textocopia = document.querySelector(".textEncriptado");
+  textocopia.select();
+  textocopia.setSelectionRange(0,9999);
+  document.execCommand('copy')
 }

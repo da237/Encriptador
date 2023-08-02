@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon" />
+    <title>Encriptador</title>
+  </head>
+
+  <body>
+    <header>
+      <img class="isotipo" src="img/alura.svg" alt="Logo Alura" />
+    </header>
+
+    <main>
+      <section class="inputUsuario">
+        <textarea
+          name="cajaMensaje"
+          id="cajaMensaje"
+          cols=""
+          rows=""
+          class="cajaMensaje"
+          placeholder="Ingrese el texto aquí"
+        ></textarea>
+
+        <div class="accion">
+          <p class="info">
+            <img
+              src="img/simbolo-admiracion.svg"
+              alt="Símbolo de admiración"
+              class="infoImg"
+            />
+            Solo letras minúsculas y sin acentos
+          </p>
+
+          <button
+            type="button"
+            onclick="llamar(this)"
+            id="encriptar"
+            class="botonEncriptar"
+          >
+            Encriptar
+          </button>
+
+          <button
+            type="button"
+            onclick="llamar(this)"
+            id="desencriptar"
+            class="botonDesencriptar"
+          >
+            Desencriptar
+          </button>
+        </div>
+      </section>
+
+      <section class="outputUsuario">
+        <img
+          src="img/animado.svg"
+          id="imagenResultado"
+          alt="Animado"
+          class="imagenResultado"
+        />
+        <div class="resultado">
+          <h1 id="tituloResultado" class="tituloResultado">
+            Ningún mensaje fue encontrado
+          </h1>
+          <p id="contenidoResultado" class="contenidoResultado">
+            Ingresa el texto que deseas encriptar o desencriptar
+          </p>
+          <button
+            type="button"
+            onclick="copiar()"
+            id="copiar"
+            class="botonCopiar"
+          >
+            Copiar
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <ul class="social">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/daniel-esteban-osorio-david-35a22a17b/"
+            target="_blank"
+            ><img class="redes" src="img/linkedin.svg" alt="Ícono LinkedIn"
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/da237" target="_blank"
+            ><img class="redes" src="img/github.svg" alt="Ícono GitHub"
+          /></a>
+        </li>
+      </ul>
+      <p class="copyright">
+        &copy; 2023 Daniel Esteban Osorio | Programa ONE - Alura Latam
+      </p>
+    </footer>
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>
